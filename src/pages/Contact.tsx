@@ -1,13 +1,10 @@
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, Linkedin, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const Contact = () => {
-  return (
-    <div className="min-h-screen bg-gray-50">
+  return <div className="min-h-screen bg-gray-50">
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-white border-b border-gray-200">
         <div className="container mx-auto px-6 py-4">
@@ -57,7 +54,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-800">Email Address</h3>
-                    <p className="text-gray-600">kishoremath@email.com</p>
+                    <p className="text-gray-600">swkktech@gmail.com</p>
                   </div>
                 </div>
 
@@ -67,7 +64,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-800">Phone Number</h3>
-                    <p className="text-gray-600">+968 XXXX XXXX</p>
+                    <p className="text-gray-600">+91 97898 32722</p>
                   </div>
                 </div>
 
@@ -77,7 +74,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-800">LinkedIn Profile</h3>
-                    <p className="text-gray-600">Connect with me professionally</p>
+                    <p className="text-gray-600">www.linkedin.com/in/pkk2</p>
                   </div>
                 </div>
 
@@ -87,7 +84,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-800">Location</h3>
-                    <p className="text-gray-600">Muscat, Oman</p>
+                    <p className="text-gray-600">Chennai, India</p>
                   </div>
                 </div>
               </div>
@@ -114,21 +111,13 @@ const Contact = () => {
                     <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
                       First Name
                     </label>
-                    <Input 
-                      id="firstName" 
-                      placeholder="Your first name" 
-                      className="w-full"
-                    />
+                    <Input id="firstName" placeholder="Your first name" className="w-full" />
                   </div>
                   <div>
                     <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
                       Last Name
                     </label>
-                    <Input 
-                      id="lastName" 
-                      placeholder="Your last name" 
-                      className="w-full"
-                    />
+                    <Input id="lastName" placeholder="Your last name" className="w-full" />
                   </div>
                 </div>
 
@@ -136,35 +125,21 @@ const Contact = () => {
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                     Email Address
                   </label>
-                  <Input 
-                    id="email" 
-                    type="email" 
-                    placeholder="your.email@example.com" 
-                    className="w-full"
-                  />
+                  <Input id="email" type="email" placeholder="your.email@example.com" className="w-full" />
                 </div>
 
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
                     Subject
                   </label>
-                  <Input 
-                    id="subject" 
-                    placeholder="What would you like to discuss?" 
-                    className="w-full"
-                  />
+                  <Input id="subject" placeholder="What would you like to discuss?" className="w-full" />
                 </div>
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                     Message
                   </label>
-                  <Textarea 
-                    id="message" 
-                    placeholder="Tell me about your project or inquiry..." 
-                    rows={6}
-                    className="w-full"
-                  />
+                  <Textarea id="message" placeholder="Tell me about your project or inquiry..." rows={6} className="w-full" />
                 </div>
 
                 <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3">
@@ -179,8 +154,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;
