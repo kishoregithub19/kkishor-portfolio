@@ -1,10 +1,59 @@
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, Linkedin, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import emailjs from '@emailjs/browser';
+import { useToast } from "@/hooks/use-toast";
+
 const Contact = () => {
-  return <div className="min-h-screen bg-gray-50">
+  const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+    const templateParams = {
+      firstName: formData.get('firstName'),
+      lastName: formData.get('lastName'),
+      email: formData.get('email'),
+      subject: formData.get('subject'),
+      message: formData.get('message'),
+    };
+
+    try {
+      await emailjs.send(
+        'service_ng3tgyo',
+        'template_o5iugwa',
+        templateParams,
+        'v0gt7AfdtVrUZ3PtR'
+      );
+
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for your message. I'll get back to you within 24-48 hours.",
+      });
+
+      // Reset form
+      e.currentTarget.reset();
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact me directly via email.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-50">
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-white border-b border-gray-200">
         <div className="container mx-auto px-6 py-4">
@@ -105,19 +154,31 @@ const Contact = () => {
             <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-200">
               <h2 className="text-2xl font-bold text-gray-800 mb-6">Send a Message</h2>
               
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
                       First Name
                     </label>
-                    <Input id="firstName" placeholder="Your first name" className="w-full" />
+                    <Input 
+                      id="firstName" 
+                      name="firstName"
+                      placeholder="Your first name" 
+                      className="w-full" 
+                      required 
+                    />
                   </div>
                   <div>
                     <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
                       Last Name
                     </label>
-                    <Input id="lastName" placeholder="Your last name" className="w-full" />
+                    <Input 
+                      id="lastName" 
+                      name="lastName"
+                      placeholder="Your last name" 
+                      className="w-full" 
+                      required 
+                    />
                   </div>
                 </div>
 
@@ -125,25 +186,49 @@ const Contact = () => {
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                     Email Address
                   </label>
-                  <Input id="email" type="email" placeholder="your.email@example.com" className="w-full" />
+                  <Input 
+                    id="email" 
+                    name="email"
+                    type="email" 
+                    placeholder="your.email@example.com" 
+                    className="w-full" 
+                    required 
+                  />
                 </div>
 
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
                     Subject
                   </label>
-                  <Input id="subject" placeholder="What would you like to discuss?" className="w-full" />
+                  <Input 
+                    id="subject" 
+                    name="subject"
+                    placeholder="What would you like to discuss?" 
+                    className="w-full" 
+                    required 
+                  />
                 </div>
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                     Message
                   </label>
-                  <Textarea id="message" placeholder="Tell me about your project or inquiry..." rows={6} className="w-full" />
+                  <Textarea 
+                    id="message" 
+                    name="message"
+                    placeholder="Tell me about your project or inquiry..." 
+                    rows={6} 
+                    className="w-full" 
+                    required 
+                  />
                 </div>
 
-                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3">
-                  Send Message
+                <Button 
+                  type="submit"
+                  disabled={isLoading}
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3"
+                >
+                  {isLoading ? "Sending..." : "Send Message"}
                 </Button>
 
                 <p className="text-sm text-gray-500 text-center">
@@ -154,6 +239,8 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default Contact;
