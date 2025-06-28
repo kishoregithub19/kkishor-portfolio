@@ -98,12 +98,12 @@ const Index = () => {
             <div className="relative group">
               {/* Main Photo Container */}
               <div className="relative w-96 h-96 rounded-3xl bg-gradient-to-br from-orange-400 via-pink-500 to-purple-600 p-1 group-hover:scale-105 transition-all duration-500">
-                <div className="w-full h-full rounded-3xl bg-gradient-to-br from-gray-100 to-gray-300 flex items-center justify-center text-gray-600 relative overflow-hidden">
-                  <div className="text-center z-10">
-                    <div className="w-32 h-32 bg-gradient-to-br from-gray-400 to-gray-500 rounded-full mx-auto mb-6 shadow-xl"></div>
-                    <p className="text-lg font-medium">Professional Photo</p>
-                    <p className="text-sm text-gray-500 mt-2">Dr. Kishore Kumar P K</p>
-                  </div>
+                <div className="w-full h-full rounded-3xl overflow-hidden relative">
+                  <img 
+                    src="https://i.postimg.cc/SNZBMjc1/IMG-0745.jpg" 
+                    alt="Dr. Kishore Kumar P K - Professional Photo"
+                    className="w-full h-full object-cover"
+                  />
                   {/* Overlay Effect */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
