@@ -26,10 +26,7 @@ const Index = () => {
               <Link to="/projects" className="text-gray-700 hover:text-blue-600 transition-colors">Projects</Link>
               <Link to="/contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</Link>
             </div>
-            <Button className="bg-orange-500 hover:bg-orange-600 text-white px-6">
-              <Download className="w-4 h-4 mr-2" />
-              Download CV
-            </Button>
+            
           </div>
         </div>
       </nav>
@@ -68,10 +65,7 @@ const Index = () => {
                 View Portfolio
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="outline" className="group bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white/20 px-8 py-4 text-lg font-semibold rounded-full hover:border-white/50 transition-all duration-300">
-                <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                Watch Intro
-              </Button>
+              
             </div>
             
             {/* Enhanced Stats Cards */}
