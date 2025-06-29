@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -21,6 +22,7 @@ const Contact = () => {
       firstName: formData.get('firstName'),
       lastName: formData.get('lastName'),
       email: formData.get('email'),
+      phone: formData.get('phone'),
       subject: formData.get('subject'),
       message: formData.get('message'),
     };
@@ -199,6 +201,19 @@ const Contact = () => {
                     placeholder="your.email@example.com" 
                     className="w-full" 
                     required 
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                    Phone Number
+                  </label>
+                  <Input 
+                    id="phone" 
+                    name="phone"
+                    type="tel" 
+                    placeholder="+91 98765 43210" 
+                    className="w-full" 
                   />
                 </div>
 
