@@ -143,12 +143,10 @@ const Experience = () => {
                 </div>
                 <div className="flex-1 bg-white rounded-lg p-8 shadow-sm border border-gray-200">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <h3 className="text-xl font-bold text-gray-800 mb-2 md:mb-0">
-                      Research Associate & Junior Faculty
-                    </h3>
+                    <h3 className="text-xl font-bold text-gray-800 mb-2 md:mb-0">Research Associate </h3>
                     <div className="flex items-center gap-2 text-gray-600">
                       <Calendar className="w-4 h-4" />
-                      <span>2012 - 2015</span>
+                      
                     </div>
                   </div>
                   
