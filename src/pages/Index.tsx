@@ -1,10 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download, Mail, Phone, Linkedin, Sparkles, Play } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const Index = () => {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 relative overflow-hidden">
+  return <div className="min-h-screen bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
@@ -99,11 +97,7 @@ const Index = () => {
               {/* Main Photo Container */}
               <div className="relative w-96 h-96 rounded-3xl bg-gradient-to-br from-orange-400 via-pink-500 to-purple-600 p-1 group-hover:scale-105 transition-all duration-500">
                 <div className="w-full h-full rounded-3xl overflow-hidden relative">
-                  <img 
-                    src="https://i.postimg.cc/SNZBMjc1/IMG-0745.jpg" 
-                    alt="Dr. Kishore Kumar P K - Professional Photo"
-                    className="w-full h-full object-cover"
-                  />
+                  <img src="https://i.postimg.cc/SNZBMjc1/IMG-0745.jpg" alt="Dr. Kishore Kumar P K - Professional Photo" className="w-full h-full object-cover" />
                   {/* Overlay Effect */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
@@ -141,21 +135,19 @@ const Index = () => {
           <div className="flex flex-wrap justify-center gap-8">
             <div className="flex items-center gap-3 bg-blue-50 px-6 py-4 rounded-lg">
               <Mail className="w-5 h-5 text-blue-600" />
-              <span className="text-gray-700">kishoremath@email.com</span>
+              <span className="text-gray-700">swkktech@gmail.com</span>
             </div>
             <div className="flex items-center gap-3 bg-green-50 px-6 py-4 rounded-lg">
               <Phone className="w-5 h-5 text-green-600" />
-              <span className="text-gray-700">+968 XXXX XXXX</span>
+              <span className="text-gray-700">+91 97898 32722</span>
             </div>
             <div className="flex items-center gap-3 bg-blue-50 px-6 py-4 rounded-lg">
               <Linkedin className="w-5 h-5 text-blue-600" />
-              <span className="text-gray-700">LinkedIn Profile</span>
+              <span className="text-gray-700">www.linkedin.com/in/pkk2</span>
             </div>
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
