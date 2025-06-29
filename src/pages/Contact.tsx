@@ -1,16 +1,16 @@
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, Linkedin, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import emailjs from '@emailjs/browser';
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -25,21 +25,27 @@ const Contact = () => {
       message: formData.get('message'),
     };
 
+    console.log('Sending email with params:', templateParams);
+
     try {
-      await emailjs.send(
+      const result = await emailjs.send(
         'service_ng3tgyo',
         'template_gzwh1ob',
         templateParams,
         'v0gt7AfdtVrUZ3PtR'
       );
 
+      console.log('EmailJS success:', result);
+
       toast({
         title: "Message sent successfully!",
         description: "Thank you for your message. I'll get back to you within 24-48 hours.",
       });
 
-      // Reset form
-      e.currentTarget.reset();
+      // Reset form using the ref instead of e.currentTarget
+      if (formRef.current) {
+        formRef.current.reset();
+      }
     } catch (error) {
       console.error('EmailJS error:', error);
       toast({
@@ -154,7 +160,7 @@ const Contact = () => {
             <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-200">
               <h2 className="text-2xl font-bold text-gray-800 mb-6">Send a Message</h2>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
