@@ -75,7 +75,7 @@ const Index = () => {
                 <div className="text-sm text-blue-100">Years Experience</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105">
-                <div className="text-3xl font-bold text-orange-400 mb-1">50+</div>
+                <div className="text-3xl font-bold text-orange-400 mb-1">Enumerous</div>
                 <div className="text-sm text-blue-100">Research Projects</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105">
