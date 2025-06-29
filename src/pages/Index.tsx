@@ -108,9 +108,9 @@ const Index = () => {
               <div className="absolute -left-8 top-20 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-800 shadow-lg animate-bounce delay-1000">
                 Python
               </div>
-              <div className="absolute -right-8 top-40 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-800 shadow-lg animate-bounce delay-1500">
-                AWS
-              </div>
+              <div className="absolute -right-8 top-40 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-800 shadow-lg animate-bounce delay-1500">Machine Learning
+
+            </div>
               <div className="absolute -left-12 bottom-32 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-800 shadow-lg animate-bounce delay-2000">
                 Data Science
               </div>
