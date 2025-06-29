@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download, Mail, Phone, Linkedin, Sparkles, Play } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -88,10 +89,10 @@ const Index = () => {
           {/* Enhanced Professional Photo Section */}
           <div className="lg:w-1/2 flex justify-center animate-fade-in delay-500">
             <div className="relative group">
-              {/* Main Photo Container */}
-              <div className="relative w-96 h-96 rounded-3xl bg-gradient-to-br from-orange-400 via-pink-500 to-purple-600 p-1 group-hover:scale-105 transition-all duration-500">
-                <div className="w-full h-full rounded-3xl overflow-hidden relative">
-                  <img src="https://i.postimg.cc/SNZBMjc1/IMG-0745.jpg" alt="Dr. Kishore Kumar P K - Professional Photo" className="w-full h-full object-cover" />
+              {/* Main Photo Container with Square Mask */}
+              <div className="relative w-96 h-96 bg-gradient-to-br from-orange-400 via-pink-500 to-purple-600 p-1 group-hover:scale-105 transition-all duration-500 rounded-2xl">
+                <div className="w-full h-full overflow-hidden relative rounded-2xl">
+                  <img src="https://i.postimg.cc/WbmbQ12S/IMG-1062.jpg" alt="Dr. Kishore Kumar P K - Professional Photo" className="w-full h-full object-cover" />
                   {/* Overlay Effect */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
@@ -102,7 +103,7 @@ const Index = () => {
               <div className="absolute -bottom-6 -left-6 w-20 h-20 bg-gradient-to-br from-blue-400 to-purple-500 rounded-xl opacity-70 -rotate-12 group-hover:-rotate-45 transition-all duration-500 shadow-xl"></div>
               
               {/* Animated Ring */}
-              <div className="absolute inset-0 rounded-3xl border-2 border-white/30 animate-pulse"></div>
+              <div className="absolute inset-0 rounded-2xl border-2 border-white/30 animate-pulse"></div>
               
               {/* Floating Skills Tags */}
               <div className="absolute -left-8 top-20 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-800 shadow-lg animate-bounce delay-1000">
